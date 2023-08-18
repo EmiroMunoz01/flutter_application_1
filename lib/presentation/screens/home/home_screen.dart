@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/config/menu/menu_items.dart';
-import 'package:flutter_application_1/presentation/screens/buttons/buttons_screen.dart';
+import 'package:go_router/go_router.dart';
 
 //creacion del statelesswidget
 class HomeScreen extends StatelessWidget {
@@ -51,9 +51,11 @@ class _CustomListTile extends StatelessWidget {
         title: Text(menuItem.title),
         subtitle: Text(menuItem.subTitle),
         //agregaremos el evento del boton
-        
+
         onTap: () {
-          Navigator.pushNamed(context, menuItem.link);
+          // Navigator.pushNamed(context, menuItem.link);
+
+          context.push(menuItem.link);
         });
   }
 }
